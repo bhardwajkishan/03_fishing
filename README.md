@@ -46,8 +46,8 @@ pip install -r requirements.txt
 python main.py
 ```
 
-**Controls:** Currently none - the hook casts and retracts on its own
-in a loop. That changes once you complete Task 3.
+**Controls:** Press **Space** to cast. The hook returns automatically
+after reaching its maximum depth or catching a fish.
 
 ---
 
