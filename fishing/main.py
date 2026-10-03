@@ -20,17 +20,20 @@ def main():
     engine = GameEngine()
     running = True
     while running:
+        delta_seconds = clock.tick(60) / 1000.0
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 engine.start_cast()
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_r:
+                engine.restart_round()
 
-        engine.update()
+        engine.update(delta_seconds)
         engine.draw(screen, font)
 
         pygame.display.flip()
-        clock.tick(60)
 
     pygame.quit()
 

@@ -47,7 +47,8 @@ python main.py
 ```
 
 **Controls:** Press **Space** to cast. The hook returns automatically
-after reaching its maximum depth or catching a fish.
+after reaching its maximum depth or catching a fish. When the 30-second
+round ends, press **R** to start a new round.
 
 ---
 

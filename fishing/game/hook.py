@@ -27,6 +27,11 @@ class Hook:
         self.y = self.surface_y
         return True
 
+    def reset(self):
+        """Return the hook to its idle starting position."""
+        self.y = self.surface_y
+        self.state = IDLE
+
     def update(self):
         if self.state == CASTING:
             self.y += self.speed
