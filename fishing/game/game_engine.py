@@ -10,7 +10,7 @@ game/catch.py) that Task 1 asks you to fix.
 """
 
 from game.hook import Hook, IDLE
-from game.fish import Fish
+from game.fish import FastFish, SlowFish
 from game.catch import check_catch
 from game.renderer import WIDTH, HEIGHT, SURFACE_Y, MAX_DEPTH_Y
 
@@ -19,9 +19,10 @@ class GameEngine:
     def __init__(self):
         self.hook = Hook(x=WIDTH / 2, surface_y=SURFACE_Y, max_depth_y=MAX_DEPTH_Y, speed=5)
         self.fish_list = [
-            Fish(x=100, y=180, speed=2, point_value=10, color=(80, 180, 220)),
-            Fish(x=400, y=280, speed=-2, point_value=10, color=(80, 180, 220)),
-            Fish(x=250, y=380, speed=3, point_value=10, color=(80, 180, 220)),
+            SlowFish(x=100, y=180, direction=1),
+            FastFish(x=500, y=230, direction=-1),
+            SlowFish(x=400, y=310, direction=-1),
+            FastFish(x=180, y=390, direction=1),
         ]
         self.hooked_fish = None
         self.score = 0
